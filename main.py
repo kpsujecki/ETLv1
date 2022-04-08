@@ -62,14 +62,14 @@ def showTheMostPopularTracks(mostpopulartracks):
     mostpopulartracks = islice(mostpopulartracks, 5)
     print("The most popular tracks:")
     for idx, mostpopulartrack in enumerate(mostpopulartracks):
-        print("{}. Track: {} The number of listenings {}".format(idx+1, mostpopulartrack[1], mostpopulartrack[0]))
+        print("{}. Track: {} The number of listenings: {}".format(idx+1, mostpopulartrack[1], mostpopulartrack[0]))
 
 
 def showTheMostPopularArtist(mostpopulartartists):
     mostpopulartartists = islice(mostpopulartartists, 5)
     print("The most popular Artists/Bands:")
     for idx, mostpopulartartist in enumerate(mostpopulartartists):
-        print("{}. Artist: {} The number of listenings {}".format(idx+1, mostpopulartartist[1], mostpopulartartist[0]))
+        print("{}. Artist: {} The number of listenings: {}".format(idx+1, mostpopulartartist[1], mostpopulartartist[0]))
 
 
 if __name__ == '__main__':
@@ -80,6 +80,6 @@ if __name__ == '__main__':
     readTrackFromFiles()
     readListeningsFromFiles()
     con.commit()
-    getDataFromDatabase()
     logging.info("Saved in database")
+    getDataFromDatabase()
     logging.info("Done")
